@@ -14,6 +14,8 @@
 		F0AAA16B2252569200169C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0AAA1692252569200169C2D /* LaunchScreen.storyboard */; };
 		F0AAA17522525E6800169C2D /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAA17422525E6800169C2D /* Sign.swift */; };
 		F0AAA177225263BC00169C2D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAA176225263BC00169C2D /* GameState.swift */; };
+		F0AAA17B2252D94600169C2D /* SoundEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAA17A2252D94600169C2D /* SoundEffects.swift */; };
+		F0AAA17D2252DA4E00169C2D /* victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F0AAA17C2252DA4D00169C2D /* victory.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F0AAA16C2252569200169C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0AAA17422525E6800169C2D /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		F0AAA176225263BC00169C2D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		F0AAA17A2252D94600169C2D /* SoundEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffects.swift; sourceTree = "<group>"; };
+		F0AAA17C2252DA4D00169C2D /* victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = victory.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,50 @@
 		F0AAA15F2252568A00169C2D /* Rock-Paper-Scissors */ = {
 			isa = PBXGroup;
 			children = (
+				F0AAA1812252E29000169C2D /* Model */,
+				F0AAA1802252E28C00169C2D /* View */,
+				F0AAA17F2252E28300169C2D /* Controller */,
+				F0AAA17E2252E26D00169C2D /* Sound */,
 				F0AAA1602252568A00169C2D /* AppDelegate.swift */,
-				F0AAA1622252568A00169C2D /* ViewController.swift */,
-				F0AAA176225263BC00169C2D /* GameState.swift */,
-				F0AAA17422525E6800169C2D /* Sign.swift */,
 				F0AAA1642252568A00169C2D /* Main.storyboard */,
 				F0AAA1672252569200169C2D /* Assets.xcassets */,
 				F0AAA1692252569200169C2D /* LaunchScreen.storyboard */,
 				F0AAA16C2252569200169C2D /* Info.plist */,
 			);
 			path = "Rock-Paper-Scissors";
+			sourceTree = "<group>";
+		};
+		F0AAA17E2252E26D00169C2D /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F0AAA17C2252DA4D00169C2D /* victory.mp3 */,
+				F0AAA17A2252D94600169C2D /* SoundEffects.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		F0AAA17F2252E28300169C2D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0AAA1622252568A00169C2D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0AAA1802252E28C00169C2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0AAA1812252E29000169C2D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0AAA176225263BC00169C2D /* GameState.swift */,
+				F0AAA17422525E6800169C2D /* Sign.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +168,7 @@
 			files = (
 				F0AAA16B2252569200169C2D /* LaunchScreen.storyboard in Resources */,
 				F0AAA1682252569200169C2D /* Assets.xcassets in Resources */,
+				F0AAA17D2252DA4E00169C2D /* victory.mp3 in Resources */,
 				F0AAA1662252568A00169C2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +183,7 @@
 				F0AAA1632252568A00169C2D /* ViewController.swift in Sources */,
 				F0AAA177225263BC00169C2D /* GameState.swift in Sources */,
 				F0AAA17522525E6800169C2D /* Sign.swift in Sources */,
+				F0AAA17B2252D94600169C2D /* SoundEffects.swift in Sources */,
 				F0AAA1612252568A00169C2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

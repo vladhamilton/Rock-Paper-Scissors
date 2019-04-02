@@ -49,6 +49,7 @@ class ViewController: UIViewController {
       statusLabel.text = "It's a draw."
     case .win:
       statusLabel.text = "You win!"
+      playSound()
     case .lose:
       statusLabel.text = "Sorry, you lose."
     case .start:
