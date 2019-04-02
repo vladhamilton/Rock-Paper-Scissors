@@ -10,12 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var cpuLabel: UILabel!
+  @IBOutlet weak var cpuChoiceLabel: UILabel!
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet weak var rockButton: UIButton!
   @IBOutlet weak var paperButton: UIButton!
   @IBOutlet weak var scissorsButton: UIButton!
   @IBOutlet weak var retryButton: UIButton!
+  @IBOutlet weak var playerScoreLabel: UILabel!
+  @IBOutlet weak var cpuScoreLabel: UILabel!
+  
+  
+  var playerScore = 0
+  var cpuScore = 0
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent 
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +33,7 @@ class ViewController: UIViewController {
   }
   
   func resetBoard() {
-    cpuLabel.text = "🤖"
+    cpuChoiceLabel.text = "🤖"
     statusLabel.text = "Rock, Paper, Scissors?"
     rockButton.isHidden = false
     rockButton.isEnabled = true
@@ -32,6 +42,7 @@ class ViewController: UIViewController {
     scissorsButton.isHidden = false
     scissorsButton.isEnabled = true
     retryButton.isHidden = true
+    super.view.backgroundColor = #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
   }
   
   func play(_ playerTurn: Sign) {
@@ -40,7 +51,7 @@ class ViewController: UIViewController {
     scissorsButton.isEnabled = false
     
     let cpu = randomSign()
-    cpuLabel.text = cpu.emoji
+    cpuChoiceLabel.text = cpu.emoji
     
     let gameResult = playerTurn.makeTurn(cpu)
     
@@ -48,10 +59,16 @@ class ViewController: UIViewController {
     case .draw:
       statusLabel.text = "It's a draw."
     case .win:
+      playerScore += 1
+      playerScoreLabel.text = String(playerScore)
       statusLabel.text = "You win!"
       playSound()
+      super.view.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
     case .lose:
+      cpuScore += 1
+      cpuScoreLabel.text = String(cpuScore)
       statusLabel.text = "Sorry, you lose."
+      super.view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
     case .start:
       statusLabel.text = "Rock, Paper, Scissors?"
     }
@@ -84,6 +101,12 @@ class ViewController: UIViewController {
   }
   @IBAction func retryButtonPressed(_ sender: Any) {
     resetBoard()
+  }
+  @IBAction func resetScoreButton(_ sender: Any) {
+    self.playerScore = 0
+    playerScoreLabel.text = "\(self.playerScore)"
+    self.cpuScore = 0
+    cpuScoreLabel.text = "\(self.cpuScore)"
   }
 }
 
